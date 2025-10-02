@@ -9,7 +9,7 @@ services:
       - "4000:4000"
     environment:
       - NODE_ENV=production
-      - OPENAI_API_KEY=${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}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
     healthcheck:
       test: ["CMD", "node", "-e", "fetch('http://localhost:4000/healthz').then(r=>r.ok?process.exit(0):process.exit(1)).catch(()=>process.exit(1))"]
       interval: 30s
